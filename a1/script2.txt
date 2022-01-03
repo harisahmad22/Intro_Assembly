@@ -1,0 +1,129 @@
+Script started on 2021-09-27 16:41:57-06:00
+]0;haris.ahmad1@csa2:~/cpsc355/assignments/a1haris.ahmad1@csa2:~/cpsc355/assignments/a1$ exitgdb asg1[13@cc -g asg1.s -o[C[C[C[C[Cexit[Kmacs asg1v2.asm[8Pgdb asg1[13@cc -g asg1.s -o[C[C[C[C[C[13Pdb[C[C[C[C[Cls[Kcd cpsc355/assignments/a1exit[Kmacs asg1v2.asm./v2[Kgcc asg1v2.s -o v2m4 asg1v2.asm > asg1v2.s[8Pemacs asg1v2.asmm4 asg1v2.asm > asg1v2.s
+]0;haris.ahmad1@csa2:~/cpsc355/assignments/a1haris.ahmad1@csa2:~/cpsc355/assignments/a1$ m4 asg1v2.asm > asg1v2.sexit[Kgdb asg1[13@cc -g asg1.s -o[C[C[C[C[Cexit[Kmacs asg1v2.asm[8Pgdb asg1[13@cc -g asg1.s -o[C[C[C[C[C[13Pdb[C[C[C[C[C[13@cc -g asg1.s -o[C[C[C[C[C[13Pdb[C[C[C[C[Cls[Kcd cpsc355/assignments/a1exit[Kmacs asg1v2.asm./v2[Kgcc asg1v2.s -o v2m4 asg1v2.asm > asg1v2.s[6Pgcc asg1v2.s -o v2[C[1@ [1@-[1@g
+]0;haris.ahmad1@csa2:~/cpsc355/assignments/a1haris.ahmad1@csa2:~/cpsc355/assignments/a1$ gdb ./v2[1Pv2[1Pv2
+GNU gdb (GDB) Fedora 8.1.1-4.fc28
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from v2...done.
+(gdb) b done
+Breakpoint 1 at 0x40067c: file asg1v2.s, line 71.
+(gdb) display/i [K[K[K[K[K[K[K[K[K[Kp $x20
+No registers.
+(gdb) p $x20[K[K[K[K[K[Kr
+Starting program: /home/uga/haris.ahmad1/cpsc355/assignments/a1/v2 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+Missing separate debuginfos, use: dnf debuginfo-install glibc-2.27-38.fc28.aarch64
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+The current X-value is: -10
+The current Y-value is: -3813
+The current maximum is: 0
+
+The current X-value is: -9
+The current Y-value is: 1478
+The current maximum is: 1478
+
+The current X-value is: -8
+The current Y-value is: 4381
+The current maximum is: 4381
+
+The current X-value is: -7
+The current Y-value is: 5508
+The current maximum is: 5508
+
+The current X-value is: -6
+The current Y-value is: 5399
+The current maximum is: 5508
+
+The current X-value is: -5
+The current Y-value is: 4522
+The current maximum is: 5508
+
+The current X-value is: -4
+The current Y-value is: 3273
+The current maximum is: 5508
+
+The current X-value is: -3
+The current Y-value is: 1976
+The current maximum is: 5508
+
+The current X-value is: -2
+The current Y-value is: 883
+The current maximum is: 5508
+
+The current X-value is: -1
+The current Y-value is: 174
+The current maximum is: 5508
+
+The current X-value is: 0
+The current Y-value is: -43
+The current maximum is: 5508
+
+The current X-value is: 1
+The current Y-value is: 268
+The current maximum is: 5508
+
+The current X-value is: 2
+The current Y-value is: 1071
+The current maximum is: 5508
+
+The current X-value is: 3
+The current Y-value is: 2258
+The current maximum is: 5508
+
+The current X-value is: 4
+The current Y-value is: 3649
+The current maximum is: 5508
+
+The current X-value is: 5
+The current Y-value is: 4992
+The current maximum is: 5508
+
+The current X-value is: 6
+The current Y-value is: 5963
+The current maximum is: 5963
+
+The current X-value is: 7
+The current Y-value is: 6166
+The current maximum is: 6166
+
+The current X-value is: 8
+The current Y-value is: 5133
+The current maximum is: 6166
+
+The current X-value is: 9
+The current Y-value is: 2324
+The current maximum is: 6166
+
+The current X-value is: 10
+The current Y-value is: -2873
+The current maximum is: 6166
+
+
+Breakpoint 1, done () at asg1v2.s:71
+71	done:	ldp		x29, x30, [sp], 16
+(gdb) rp $x20
+$1 = 6166
+(gdb) q[Kc
+Continuing.
+[Inferior 1 (process 7042) exited with code 036]
+(gdb) q
+]0;haris.ahmad1@csa2:~/cpsc355/assignments/a1haris.ahmad1@csa2:~/cpsc355/assignments/a1$ exit
+exit
+
+Script done on 2021-09-27 16:46:49-06:00

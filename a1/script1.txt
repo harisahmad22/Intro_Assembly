@@ -1,0 +1,418 @@
+Script started on 2021-09-27 16:37:01-06:00
+]0;haris.ahmad1@csa2:~/cpsc355/assignments/a1haris.ahmad1@csa2:~/cpsc355/assignments/a1$ exitmacs asg1v2.asm[8Pgdb asg1[13@cc -g asg1.s -o[C[C[C[C[C[13Pdb[C[C[C[C[Cls[Kcd cpsc355/assignments/a1exit[Kcd cpsc355/assignments/a1ls[Kgdb asg1ls[Kcd cpsc355/assignments/a1exit[Kmacs asg1v2.asm./v2[Kgcc asg1v2.s -o v2m4 asg1v2.asm > asg1v2.s[6Pgcc asg1v2.s -o v2m4 asg1v2.asm > asg1v2.s[8Pemacs asg1v2.asmm4 asg1v2.asm > asg1v2.s[6Pgcc asg1v2.s -o v2./v2[Kemacs asg1v2.asmxit[Kcd cpsc355/assignments/a1ls[Kgdb asg1[13@cc -g asg1.s -o[C[C[C[C[C[13Pdb[C[C[C[C[Cemacs asg1v2.asmxit[Kmacs asg1v2.asm[8Pgdb asg1[13@cc -g asg1.s -o[C[C[C[C[C
+]0;haris.ahmad1@csa2:~/cpsc355/assignments/a1haris.ahmad1@csa2:~/cpsc355/assignments/a1$ gcc -g asg1.s -o asg1exit[Kmacs asg1v2.asm[8Pgdb asg1
+GNU gdb (GDB) Fedora 8.1.1-4.fc28
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from asg1...done.
+(gdb) l
+1	yValue:			.string "The current Y-value is: %d\n"
+2	xValue:			.string "The current X-value is: %d\n"
+3	maximum:		.string "The current maximum is: %d\n\n"
+4	
+5		.balign		4
+6		.global		main
+7	main:	stp		x29, x30, [sp, -16]!
+8		mov		x29, sp
+9	
+10		mov		x19, 0 // setting an integer of value 0 (index start)
+(gdb) b main
+Breakpoint 1 at 0x4005ec: file asg1.s, line 7.
+(gdb) displau[Ky/i $pc
+1: x/i $pc
+<error: No registers.>
+(gdb) ni
+The program is not being run.
+(gdb) r
+Starting program: /home/uga/haris.ahmad1/cpsc355/assignments/a1/asg1 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+Missing separate debuginfos, use: dnf debuginfo-install glibc-2.27-38.fc28.aarch64
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+
+Breakpoint 1, main () at asg1.s:7
+7	main:	stp		x29, x30, [sp, -16]!
+1: x/i $pc
+=> 0x4005ec <main>:	stp	x29, x30, [sp, #-16]!
+(gdb) ni
+8		mov		x29, sp
+1: x/i $pc
+=> 0x4005f0 <main+4>:	mov	x29, sp
+(gdb) ni
+10		mov		x19, 0 // setting an integer of value 0 (index start)
+1: x/i $pc
+=> 0x4005f4 <main+8>:	mov	x19, #0x0                   	// #0
+(gdb) ni
+11		mov 		x25, -10 // starting x-value (-10)
+1: x/i $pc
+=> 0x4005f8 <main+12>:	mov	x25, #0xfffffffffffffff6    	// #-10
+(gdb) ni
+loop () at asg1.s:13
+13	loop:   cmp		x19, 21 // comparing the starting value with 21 (should iterate 20x)
+1: x/i $pc
+=> 0x4005fc <loop>:	cmp	x19, #0x15
+(gdb) ni
+14		b.ge		done // if the starting loop value is now greater than or equal to 11 move to "done:"
+1: x/i $pc
+=> 0x400600 <loop+4>:	b.ge	0x400684 <done>  // b.tcont
+(gdb) ni
+16		mov 		x21, -3	      // setting x21 equal to -3 at the start of every loop iteration
+1: x/i $pc
+=> 0x400604 <loop+8>:	mov	x21, #0xfffffffffffffffd    	// #-3
+(gdb) ni
+17		mul		x26, x25, x25 // cube the polynomial (1st step (square))
+1: x/i $pc
+=> 0x400608 <loop+12>:	mul	x26, x25, x25
+(gdb) ni
+18		mul		x26, x26, x25 // cube the polynomial (2nd step (cube))
+1: x/i $pc
+=> 0x40060c <loop+16>:	mul	x26, x26, x25
+(gdb) ni
+19		mul		x26, x26, x25 // multiply by the cubed number earlier (x^4)
+1: x/i $pc
+=> 0x400610 <loop+20>:	mul	x26, x26, x25
+(gdb) ni
+20		mul 		x26, x21, x26 // multiplication steps for the highest exponent (4) on the polynomial
+1: x/i $pc
+=> 0x400614 <loop+24>:	mul	x26, x21, x26
+(gdb) ni
+21		mov 		x24, x26      // setting x24 = to x26 (x24 = to the value of the first term)
+1: x/i $pc
+=> 0x400618 <loop+28>:	mov	x24, x26
+(gdb) ni
+23		mov 		x21, 267      // setting x21 equal to 267
+1: x/i $pc
+=> 0x40061c <loop+32>:	mov	x21, #0x10b                 	// #267
+(gdb) ni
+24		mul 		x26, x25, x25 // multiplication steps for the second highest exponent (2(squaring)) 
+1: x/i $pc
+=> 0x400620 <loop+36>:	mul	x26, x25, x25
+(gdb) ni
+25		mul 		x26, x21, x26 
+1: x/i $pc
+=> 0x400624 <loop+40>:	mul	x26, x21, x26
+(gdb) ni
+26		add 		x24, x24, x26 // adding the multiplication result to the running total of the y-value
+1: x/i $pc
+=> 0x400628 <loop+44>:	add	x24, x24, x26
+(gdb) ni
+28		mov 		x21, 47	      // setting x21 equal to 47
+1: x/i $pc
+=> 0x40062c <loop+48>:	mov	x21, #0x2f                  	// #47
+(gdb) ni
+29		mul		x26, x25, x21 // multiplication steps for the third highest exponent (1)
+1: x/i $pc
+=> 0x400630 <loop+52>:	mul	x26, x25, x21
+(gdb) ni
+30		add 		x24, x26, x24 // adding the multiplication result to the running total of the y-value
+1: x/i $pc
+=> 0x400634 <loop+56>:	add	x24, x26, x24
+(gdb) ni
+32		add 		x24, x24, -43 // adding the running total of the y-value with -43
+1: x/i $pc
+=> 0x400638 <loop+60>:	sub	x24, x24, #0x2b
+(gdb) ni
+34		adrp		x0, xValue		// adding the xValue string to x0
+1: x/i $pc
+=> 0x40063c <loop+64>:	adrp	x0, 0x400000
+(gdb) ni
+35		add		x0, x0, :lo12:xValue
+1: x/i $pc
+=> 0x400640 <loop+68>:	add	x0, x0, #0x5b0
+(gdb) ni
+36		mov 		x1, x25			// setting x1 to display the value of the current x-value
+1: x/i $pc
+=> 0x400644 <loop+72>:	mov	x1, x25
+(gdb) ni
+38		bl		printf			// printing the full string + x-value to the screen
+1: x/i $pc
+=> 0x400648 <loop+76>:	bl	0x400480 <printf@plt>
+(gdb) ni
+The current X-value is: -10
+40		adrp		x0, yValue		// adding the yValue string to x0
+1: x/i $pc
+=> 0x40064c <loop+80>:	adrp	x0, 0x400000
+(gdb) ni
+41		add		x0, x0, :lo12:yValue
+1: x/i $pc
+=> 0x400650 <loop+84>:	add	x0, x0, #0x594
+(gdb) ni
+42		mov		x1, x24			// setting x1 to display the value of the total y-value
+1: x/i $pc
+=> 0x400654 <loop+88>:	mov	x1, x24
+(gdb) ni
+44		bl		printf			// printing the full string + y-value to the screen
+1: x/i $pc
+=> 0x400658 <loop+92>:	bl	0x400480 <printf@plt>
+(gdb) ni
+The current Y-value is: -3813
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 0
+
+The current X-value is: -9
+The current Y-value is: 1478
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 1478
+
+The current X-value is: -8
+The current Y-value is: 4381
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 4381
+
+The current X-value is: -7
+The current Y-value is: 5508
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 5508
+
+The current X-value is: -6
+The current Y-value is: 5399
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 5508
+
+The current X-value is: -5
+The current Y-value is: 4522
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 5508
+
+The current X-value is: -4
+The current Y-value is: 3273
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 5508
+
+The current X-value is: -3
+The current Y-value is: 1976
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 5508
+
+The current X-value is: -2
+The current Y-value is: 883
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 5508
+
+The current X-value is: -1
+The current Y-value is: 174
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 5508
+
+The current X-value is: 0
+The current Y-value is: -43
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 5508
+
+The current X-value is: 1
+The current Y-value is: 268
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 5508
+
+The current X-value is: 2
+The current Y-value is: 1071
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 5508
+
+The current X-value is: 3
+The current Y-value is: 2258
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 5508
+
+The current X-value is: 4
+The current Y-value is: 3649
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 5508
+
+The current X-value is: 5
+The current Y-value is: 4992
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 5508
+
+The current X-value is: 6
+The current Y-value is: 5963
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 5963
+
+The current X-value is: 7
+The current Y-value is: 6166
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 6166
+
+The current X-value is: 8
+The current Y-value is: 5133
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 6166
+
+The current X-value is: 9
+The current Y-value is: 2324
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 6166
+
+The current X-value is: 10
+The current Y-value is: -2873
+46		cmp 		x24, x20		// comparing x24 (y-value) to x-20
+1: x/i $pc
+=> 0x40065c <loop+96>:	cmp	x24, x20
+(gdb) ni
+47		b.le		increments		// if the x24 is less than or equal x20 go to label "increments"
+1: x/i $pc
+=> 0x400660 <loop+100>:	b.le	0x400668 <increments>
+(gdb) ni
+The current maximum is: 6166
+
+[Inferior 1 (process 5862) exited with code 036]
+(gdb) q
+]0;haris.ahmad1@csa2:~/cpsc355/assignments/a1haris.ahmad1@csa2:~/cpsc355/assignments/a1$ exit
+exit
+
+Script done on 2021-09-27 16:41:41-06:00

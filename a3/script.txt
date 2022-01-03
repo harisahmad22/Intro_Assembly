@@ -1,0 +1,303 @@
+Script started on 2021-10-22 13:28:26-06:00
+]0;haris.ahmad1@csa3:~/cpsc355/assignments/a3haris.ahmad1@csa3:~/cpsc355/assignments/a3$ exit[2Plsrm script.txt [3Pgdb assign3cc assign3.s -o assign3 -g[1Pm4 assign3.asm > assign3.sexit[Km4 assign3.asm > assign3.s
+]0;haris.ahmad1@csa3:~/cpsc355/assignments/a3haris.ahmad1@csa3:~/cpsc355/assignments/a3$ m4 assign3.asm > assign3.sexit[K[2Plsrm script.txt [3Pgdb assign3cc assign3.s -o assign3 -g
+]0;haris.ahmad1@csa3:~/cpsc355/assignments/a3haris.ahmad1@csa3:~/cpsc355/assignments/a3$ gcc assign3.s -o assign3 -g[1Pm4 assign3.asm > assign3.sexit[K[2Plsrm script.txt [3Pgdb assign3cc assign3.s -o assign3 -g[16Pdb assign3
+GNU gdb (GDB) Fedora 8.1.1-4.fc28
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from assign3...done.
+(gdb) b* reset1
+Breakpoint 1 at 0x40068c: file assign3.s, line 91.
+(gdb) b* reset1[K2
+Breakpoint 2 at 0x400748: file assign3.s, line 158.
+(gdb) r
+Starting program: /home/uga/haris.ahmad1/cpsc355/assignments/a3/assign3 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+Missing separate debuginfos, use: dnf debuginfo-install glibc-2.27-38.fc28.aarch64
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+Unsorted array:
+v[0]: 359
+v[1]: 454
+v[2]: 105
+v[3]: 115
+v[4]: 81
+v[5]: 255
+v[6]: 74
+v[7]: 236
+v[8]: 297
+v[9]: 205
+v[10]: 186
+v[11]: 427
+v[12]: 498
+v[13]: 251
+v[14]: 483
+v[15]: 326
+v[16]: 124
+v[17]: 194
+v[18]: 84
+v[19]: 504
+v[20]: 283
+v[21]: 488
+v[22]: 487
+v[23]: 397
+v[24]: 374
+v[25]: 346
+v[26]: 302
+v[27]: 99
+v[28]: 51
+v[29]: 415
+v[30]: 201
+v[31]: 410
+v[32]: 358
+v[33]: 306
+v[34]: 13
+v[35]: 439
+v[36]: 49
+v[37]: 88
+v[38]: 163
+v[39]: 346
+v[40]: 293
+v[41]: 349
+v[42]: 261
+v[43]: 279
+v[44]: 88
+v[45]: 233
+v[46]: 94
+v[47]: 212
+v[48]: 427
+v[49]: 178
+v[50]: 205
+v[51]: 198
+v[52]: 155
+v[53]: 180
+v[54]: 84
+v[55]: 17
+v[56]: 14
+v[57]: 386
+v[58]: 116
+v[59]: 65
+v[60]: 289
+v[61]: 317
+v[62]: 476
+v[63]: 135
+v[64]: 112
+v[65]: 489
+v[66]: 62
+v[67]: 161
+v[68]: 65
+v[69]: 225
+v[70]: 508
+v[71]: 359
+v[72]: 62
+v[73]: 257
+v[74]: 126
+v[75]: 151
+v[76]: 490
+v[77]: 220
+v[78]: 363
+v[79]: 406
+v[80]: 399
+v[81]: 56
+v[82]: 92
+v[83]: 42
+v[84]: 236
+v[85]: 176
+v[86]: 59
+v[87]: 251
+v[88]: 50
+v[89]: 175
+v[90]: 316
+v[91]: 340
+v[92]: 492
+v[93]: 280
+v[94]: 475
+v[95]: 92
+v[96]: 258
+v[97]: 26
+v[98]: 254
+v[99]: 323
+
+Breakpoint 1, reset1 () at assign3.s:91
+91		mov		w23, 100				// setting w23 equal to 100
+(gdb) x/10 [K0 $19[K[Kx10[K9
+0xfffffffff0e0:	359	454	105	115
+0xfffffffff0f0:	81	255	74	236
+0xfffffffff100:	297	205	186	427
+0xfffffffff110:	498	251	483	326
+0xfffffffff120:	124	194	84	504
+0xfffffffff130:	283	488	487	397
+0xfffffffff140:	374	346	302	99
+0xfffffffff150:	51	415	201	410
+0xfffffffff160:	358	306	13	439
+0xfffffffff170:	49	88	163	346
+0xfffffffff180:	293	349	261	279
+0xfffffffff190:	88	233	94	212
+0xfffffffff1a0:	427	178	205	198
+0xfffffffff1b0:	155	180	84	17
+0xfffffffff1c0:	14	386	116	65
+0xfffffffff1d0:	289	317	476	135
+0xfffffffff1e0:	112	489	62	161
+0xfffffffff1f0:	65	225	508	359
+0xfffffffff200:	62	257	126	151
+0xfffffffff210:	490	220	363	406
+0xfffffffff220:	399	56	92	42
+0xfffffffff230:	236	176	59	251
+0xfffffffff240:	50	175	316	340
+0xfffffffff250:	492	280	475	92
+0xfffffffff260:	258	26	254	323
+(gdb) c
+Continuing.
+
+Breakpoint 2, reset2 () at assign3.s:158
+158		adrp		x0, sorted				// first step in printing the unsorted prompt	
+(gdb) cx/100 $x19
+0xfffffffff0e0:	508	504	498	492
+0xfffffffff0f0:	490	489	488	487
+0xfffffffff100:	483	476	475	454
+0xfffffffff110:	439	427	427	415
+0xfffffffff120:	410	406	399	397
+0xfffffffff130:	386	374	363	359
+0xfffffffff140:	359	358	349	346
+0xfffffffff150:	346	340	326	323
+0xfffffffff160:	317	316	306	302
+0xfffffffff170:	297	293	289	283
+0xfffffffff180:	280	279	261	258
+0xfffffffff190:	257	255	254	251
+0xfffffffff1a0:	251	236	236	233
+0xfffffffff1b0:	225	220	212	205
+0xfffffffff1c0:	205	201	198	194
+0xfffffffff1d0:	186	180	178	176
+0xfffffffff1e0:	175	163	161	155
+0xfffffffff1f0:	151	135	126	124
+0xfffffffff200:	116	115	112	105
+0xfffffffff210:	99	94	92	92
+0xfffffffff220:	88	88	84	84
+0xfffffffff230:	81	74	65	65
+0xfffffffff240:	62	62	59	56
+0xfffffffff250:	51	50	49	42
+0xfffffffff260:	26	17	14	13
+(gdb) c
+Continuing.
+
+Sorted array:
+v[0]: 508
+v[1]: 504
+v[2]: 498
+v[3]: 492
+v[4]: 490
+v[5]: 489
+v[6]: 488
+v[7]: 487
+v[8]: 483
+v[9]: 476
+v[10]: 475
+v[11]: 454
+v[12]: 439
+v[13]: 427
+v[14]: 427
+v[15]: 415
+v[16]: 410
+v[17]: 406
+v[18]: 399
+v[19]: 397
+v[20]: 386
+v[21]: 374
+v[22]: 363
+v[23]: 359
+v[24]: 359
+v[25]: 358
+v[26]: 349
+v[27]: 346
+v[28]: 346
+v[29]: 340
+v[30]: 326
+v[31]: 323
+v[32]: 317
+v[33]: 316
+v[34]: 306
+v[35]: 302
+v[36]: 297
+v[37]: 293
+v[38]: 289
+v[39]: 283
+v[40]: 280
+v[41]: 279
+v[42]: 261
+v[43]: 258
+v[44]: 257
+v[45]: 255
+v[46]: 254
+v[47]: 251
+v[48]: 251
+v[49]: 236
+v[50]: 236
+v[51]: 233
+v[52]: 225
+v[53]: 220
+v[54]: 212
+v[55]: 205
+v[56]: 205
+v[57]: 201
+v[58]: 198
+v[59]: 194
+v[60]: 186
+v[61]: 180
+v[62]: 178
+v[63]: 176
+v[64]: 175
+v[65]: 163
+v[66]: 161
+v[67]: 155
+v[68]: 151
+v[69]: 135
+v[70]: 126
+v[71]: 124
+v[72]: 116
+v[73]: 115
+v[74]: 112
+v[75]: 105
+v[76]: 99
+v[77]: 94
+v[78]: 92
+v[79]: 92
+v[80]: 88
+v[81]: 88
+v[82]: 84
+v[83]: 84
+v[84]: 81
+v[85]: 74
+v[86]: 65
+v[87]: 65
+v[88]: 62
+v[89]: 62
+v[90]: 59
+v[91]: 56
+v[92]: 51
+v[93]: 50
+v[94]: 49
+v[95]: 42
+v[96]: 26
+v[97]: 17
+v[98]: 14
+v[99]: 13
+[Inferior 1 (process 16494) exited with code 012]
+(gdb) q
+]0;haris.ahmad1@csa3:~/cpsc355/assignments/a3haris.ahmad1@csa3:~/cpsc355/assignments/a3$ exit
+exit
+
+Script done on 2021-10-22 13:29:21-06:00

@@ -1,0 +1,28 @@
+Script started on 2021-11-26 13:58:03-07:00
+]0;haris.ahmad1@csa2:~/cpsc355/assignments/a5haris.ahmad1@csa2:~/cpsc355/assignments/a5$ ./myprog[4Pmake
+make: 'myprog' is up to date.
+]0;haris.ahmad1@csa2:~/cpsc355/assignments/a5haris.ahmad1@csa2:~/cpsc355/assignments/a5$ make./myprog
+1 2 - 4 5 + * =
+
+-9
+
+4 5 + =
+
+9
+
+8 7 - =
+
+1
+
+3 4 + 5 4 - + =
+
+8
+
+33 6  7 + =
+
+100
+
+]0;haris.ahmad1@csa2:~/cpsc355/assignments/a5haris.ahmad1@csa2:~/cpsc355/assignments/a5$ exit
+exit
+
+Script done on 2021-11-26 13:59:48-07:00

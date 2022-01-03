@@ -1,0 +1,81 @@
+Script started on 2021-10-08 00:20:31-06:00
+]0;haris.ahmad1@csa3:~/cpsc355/assignments/a2haris.ahmad1@csa3:~/cpsc355/assignments/a2$ exitgdb assign2a.outexit[Kgdb assign2a.out
+GNU gdb (GDB) Fedora 8.1.1-4.fc28
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from assign2a.out...(no debugging symbols found)...done.
+(gdb) b step 1[K[K1
+Breakpoint 1 at 0x4005c0
+(gdb) b step2
+Breakpoint 2 at 0x4005d8
+(gdb) b step3
+Breakpoint 3 at 0x4005ec
+(gdb) b step4
+Breakpoint 4 at 0x400600
+(gdb) b step[K[K[K[Kprint
+Breakpoint 5 at 0x400634
+(gdb) r
+Starting program: /home/uga/haris.ahmad1/cpsc355/assignments/a2/assign2a.out 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+Missing separate debuginfos, use: dnf debuginfo-install glibc-2.27-38.fc28.aarch64
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+
+Breakpoint 1, 0x00000000004005c0 in step1 ()
+(gdb) p/t $w19
+$1 = 10000000000011001000000
+(gdb) p/t $w19[K2[K[K20
+$2 = 0
+(gdb) c
+Continuing.
+
+Breakpoint 2, 0x00000000004005d8 in step2 ()
+(gdb) cp/t $w201920
+$3 = 1011111111000000101111111100
+(gdb) c
+Continuing.
+
+Breakpoint 3, 0x00000000004005ec in step3 ()
+(gdb) cp/t $w20
+$4 = 1110111100110000111011110011
+(gdb) c
+Continuing.
+
+Breakpoint 4, 0x0000000000400600 in step4 ()
+(gdb) cp/t $w20
+$5 = 11100000001111111110000000111111
+(gdb) c
+Continuing.
+
+Breakpoint 5, 0x0000000000400634 in print ()
+(gdb) p/x $w19
+$6 = 0x7fc07fc
+(gdb) p/x $w19[1P $w19t $w19
+$7 = 111111111000000011111111100
+(gdb) p/t $w19[1P $w19x $w19[C[C[C[C[C[K[K20
+$8 = 0x3fe03fe0
+(gdb) p/x $w20[1P $w20t $w20
+$9 = 111111111000000011111111100000
+(gdb) c
+Continuing.
+Original: 0x07FC07FC	Reversed: 0x3FE03FE0
+[Inferior 1 (process 7175) exited with code 052]
+(gdb) q
+]0;haris.ahmad1@csa3:~/cpsc355/assignments/a2haris.ahmad1@csa3:~/cpsc355/assignments/a2$ exit
+exit
+
+Script done on 2021-10-08 00:23:49-06:00
